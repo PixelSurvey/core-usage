@@ -37,9 +37,15 @@ python -m pixelsurvey_core.survey_gen <survey_id>
 python -m pixelsurvey_core.survey_gen homes-example
 ```
 
-## How it Works
+## Running the created survey (debug mode)
 
-- Recipe files go in `core-usage/recipes/`
-- Generated surveys are created in `core-usage/surveys/`
-- Both paths are configured automatically via `vars.py` in `pixelsurvey-core`
-- The submodule ensures you always have the correct version of the generator
+```bash
+# Run it with the psenv
+cd surveys/<survey_id>
+python app.py
+
+# Example:
+cd surveys/survey-homes-example
+python app.py
+```
+
