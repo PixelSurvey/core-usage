@@ -1,0 +1,226 @@
+version: 1.0
+version_name: Albatros
+
+survey:
+  name: "home_preferences_study"
+  title: "House Preferences Study"
+  subtitle: "A comprehensive study on housing choices and residential preferences"
+  logo: assets/user_logo.png
+  color: "#2E8B57"
+  
+  sections:
+    onboarding:
+      home:
+        content: |
+          ## Welcome to the Home Preferences Study! 🏠🏡🏢
+          
+          ### About This Research
+          We are conducting a comprehensive study to understand consumer preferences for residential properties. Your participation will help us better understand:
+          
+          - Housing purchasing decisions
+          - Preference patterns across different demographics
+          - Factors that influence real estate choices
+          
+          ### What to Expect
+          This study will take approximately **15-20 minutes** and consists of:
+          - Brief screening questions
+          - Interactive preference tasks
+          - Questions about your housing preferences and habits
+          
+          ### Compensation
+          Participants will receive **$5** upon completion.
+          
+          Your responses are completely **anonymous** and will only be used for research purposes.
+
+      consent:
+        content: |
+          ## Informed Consent
+
+          I would like to invite you to participate in this research to understand preferences for residential properties and housing choices. This study is being carried out by Francisco Garrido-Valenzuela from TU Delft. The purpose of this research study is to explore how people evaluate and choose between different housing options. During the survey, you will be presented with different activities related to houses. This survey should take approximately **15-20 minutes** to complete.
+          
+          As with any online activity, there is always a potential risk of a data breach. We will minimise all risks by keeping your responses confidential in secure TU Delft storage accessible only to the TU Delft research team. Additionally, the survey is designed to maintain your anonymity. Please do not provide personal information that could reveal your identity; if you do, that personal data will be deleted. Your responses to open-ended questions may be quoted in my student thesis.
+
+          Your responses to the closed questions may be made publicly available for potential further research, but they cannot be traced back to you. Responses to open questions will be deleted no later than one month after the completion of the project.
+
+          To participate in this research, you must be at least 18 years old. If any images or materials unexpectedly cause stress or anxiety, you are free to interrupt the survey at any time.
+
+          If you have any questions, feel free to contact me at f.garridov@tudelft.nl.
+
+          ##### Thank you for your participation!
+          Francisco Garrido-Valenzuela
+          TU Delft
+
+        consent_statement: "I am older than 18 and I consent to participate in this study"
+
+      screening:
+        content: |
+          ## Participant Screening
+          
+          Please answer the following questions to determine your eligibility for this study.
+          
+        questions:
+          - id: 1
+            type: multiple_choice
+            order: 1
+            question: "What is your age group?"
+            alternatives:
+              - "18-25"
+              - "26-35"
+              - "36-45"
+              - "46-55"
+              - "56-65"
+              - "Over 65"
+            required: true
+            variable_name: age_group
+
+          - id: 2
+            type: multiple_choice
+            order: 2
+            question: "What is your gender?"
+            alternatives:
+              - "Male"
+              - "Female"
+              - "Other"
+            required: true
+            variable_name: gender
+
+          - id: 3
+            type: multiple_choice
+            order: 3
+            question: "Which continent do you currently live in?"
+            alternatives:
+              - "North America"
+              - "South America"
+              - "Europe"
+              - "Asia"
+              - "Africa"
+              - "Oceania"
+            required: true
+            variable_name: continent
+
+        quotas:
+          method: uniform
+          limit: 2
+          fullquota_content: |
+            ## Thank you for your interest
+            However, you are not eligible for continuing replying this survey
+
+    body:
+      instructions:
+        content: |
+          ## Study Instructions
+          
+          You will now complete seven activities related to housing preferences and perceptions. Please read the instructions carefully for each section.
+          
+          ### Types of Activities
+          
+          1. **Choice Tasks (x2)**: You'll see different housing options and choose your preference
+          2. **Similarity Tasks (x2)**: You'll identify similarities between property images
+          3. **Rating Tasks (x2)**: You'll rate properties on different characteristics
+          4. **Questions (x2)**: You'll answer questions about your housing preferences and habits
+          
+          Take your time and answer based on your honest preferences and perceptions.
+     
+      activity_1:
+        order: 1
+        type: experiment
+        experiment_type: stated_choice
+        persistent_instructions: |
+          ### Experiment I: Property Choice Task - Custom Design
+
+          You will see pairs of properties with location and amenity information. Choose your preference.
+          
+        task:
+          query: "Which property would you prefer to purchase?"
+          instance: "Property"
+          n_alternatives: 2
+          attributes:
+            - label: "Property"
+              type: image
+              unit: "url"
+            - label: "Price"
+              type: standard
+              unit: "€"
+        settings:
+          tasks_per_respondent: 8
+          experimental_design_mode: custom
+          custom_design: experiments/exp1/sc_custom_design.csv
+
+      activity_2:
+        order: 2
+        type: questionnaire
+        persistent_instructions: |
+          ### Background Questions
+
+          Please answer the following questions about your housing preferences and living situation.
+
+        questions:
+          - id: 1
+            type: multiple_choice
+            order: 1
+            question: "What is your household's socioeconomic status?"
+            alternatives:
+              - "Low income (Under $25,000)"
+              - "Lower-middle income ($25,000-$49,999)"
+              - "Middle income ($50,000-$74,999)"
+              - "Upper-middle income ($75,000-$99,999)"
+              - "High income ($100,000+)"
+              - "Prefer not to say"
+            required: true
+            variable_name: socioeconomic_status
+
+          - id: 2
+            type: multiple_choice
+            order: 2
+            question: "What is your preferred property type?"
+            alternatives:
+              - "Single-family house"
+              - "Apartment/Condo"
+              - "Townhouse"
+              - "Duplex"
+              - "Mobile home"
+              - "Other"
+            required: true
+            variable_name: preferred_property_type
+
+          - id: 3
+            type: multiple_choice
+            order: 3
+            question: "How often do you move to a new residence?"
+            alternatives:
+              - "Every year"
+              - "Every 2-3 years"
+              - "Every 4-5 years"
+              - "Every 6-10 years"
+              - "Rarely (10+ years)"
+              - "Never moved"
+            required: false
+            variable_name: moving_frequency
+
+          - id: 4
+            type: open_text
+            order: 4
+            question: "Please share your opinion about the most important factors when choosing a home. What influences your housing decisions the most?"
+            required: true
+            variable_name: housing_opinion
+
+    closure:
+      end:
+        content: |
+          ## Thank You! 🎉
+          
+          ### Study Complete
+          Thank you for participating in our Home Preferences Study! Your responses will help us better understand consumer preferences and housing decisions.
+          
+          ### What's Next?
+          Your compensation will be processed within 2-3 business days.
+          
+          ### Questions?
+          If you have any questions about this research, please contact:
+          - Email: researcher@university.edu
+          - Phone: (555) 123-4567
+          
+          ### Share Your Experience
+          If you enjoyed participating in this study, feel free to share it with friends who might also be interested in research participation.
+          
+          **Thank you again for your valuable contribution to our research!**
