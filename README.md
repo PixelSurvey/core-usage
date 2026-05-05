@@ -82,7 +82,7 @@ Once your survey is generated, you can run it locally to test the flow and verif
 
 ```bash
 # Navigate to the newly generated survey directory
-cd surveys/<survey_id>
+cd surveys/survey-<survey_name>
 
 # Run the Dash application
 python app.py
