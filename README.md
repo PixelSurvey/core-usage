@@ -76,6 +76,19 @@ python -m pixelsurvey-core.survey_gen stated_preference_example
 
 ---
 
+## 🛠️ Generate templates for your experimental activities
+
+After you have created the Survey YAML recipe. You can generate the CSV templates (examples) you need to fill for your experiments (custom or random) based the attributes names you have filled.
+
+### 📄 Template files 
+
+```bash
+# Generate example templates in your recipe folder
+python -m pixelsurvey-core.expirement_templates_gen <survey_name>
+```
+After running this command, a new folder `templates` will be added in your recipe folder with the templated ready to be filled with your edxperimental design data.
+
+
 ## ▶️ Running a Generated Survey (Debug Mode)
 
 Once your survey is generated, you can run it locally to test the flow and verify the design before deployment.
