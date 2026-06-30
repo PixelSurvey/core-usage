@@ -55,10 +55,10 @@ To generate a new Dash survey application from a YAML recipe, use the core gener
 > Inside the `recipes/` directory, you must create a specific folder for each survey using the `recipe-<survey_name>` naming convention. All your YAML configurations (like `survey.yaml`) and assets go inside that folder.
 > 
 > **Example structure:**
-> If the `<survey_name>` is `stated_preference_example`, the folder structure should be:
-> `recipes/recipe-stated_preference_example/survey.yaml`
+> If the `<survey_name>` is `binary_choice_example`, the folder structure should be:
+> `recipes/recipe-binary_choice_example/survey.yaml`
 > 
-> When running the generator, you must pass exactly that `<survey_name>` (in this case, `stated_preference_example`).
+> When running the generator, you must pass exactly that `<survey_name>` (in this case, `binary_choice_example`).
 
 ```bash
 # Ensure your virtual environment is active
@@ -70,9 +70,9 @@ python -m pixelsurvey-core.survey_gen <survey_name>
 
 **Example:**
 ```bash
-python -m pixelsurvey-core.survey_gen stated_preference_example
+python -m pixelsurvey-core.survey_gen binary_choice_example
 ```
-*This will read from `recipes/recipe-stated_preference_example/` and generate a new Dash app inside the `surveys/survey-stated_preference_example/` directory.*
+*This will read from `recipes/recipe-binary_choice_example/` and generate a new Dash app inside the `surveys/survey-binary_choice_example/` directory.*
 
 ---
 
@@ -103,7 +103,7 @@ python app.py
 
 **Example:**
 ```bash
-cd surveys/survey-stated_preference_example
+cd surveys/survey-binary_choice_example
 python app.py
 ```
 
