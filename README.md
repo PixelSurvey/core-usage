@@ -9,7 +9,7 @@ By keeping the core engine as a Git submodule, this structure ensures a clean se
 ## 📁 Repository Structure
 
 ```text
-core-usage/
+pixelsurvey-manager/
 ├── pixelsurvey-core/    # The main survey generation engine (Git submodule)
 ├── recipes/             # Directory for your YAML survey configurations
 ├── surveys/             # (Generated) Output directory for created Dash surveys
