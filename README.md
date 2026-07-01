@@ -1,6 +1,6 @@
 # 🚀 PixelSurvey Usage Environment
 
-Welcome to the **PixelSurvey Usage Environment**. This repository serves as your workspace to create, manage, and run surveys using the `pixelsurvey-core` engine. 
+Welcome to the **PixelSurvey Manager Environment**. This repository serves as your workspace to create, manage, and run surveys using the `pixelsurvey-core` engine. 
 
 By keeping the core engine as a Git submodule, this structure ensures a clean separation between the survey generation engine and your specific research data (recipes and generated surveys).
 
